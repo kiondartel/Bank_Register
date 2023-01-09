@@ -27,7 +27,7 @@ function App() {
       <Styled.Container>
         <Styled.Title>Usuarios</Styled.Title>
         <Form />
-        <Grid users={users} />
+        <Grid users={users} setUsers={setUsers} />
       </Styled.Container>
       <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
       <Global />

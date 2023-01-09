@@ -1,9 +1,24 @@
 import React from "react";
 import * as Styles from "./styles";
 import { FaTrash, FaEdit } from "react-icons/fa";
+import axios from "axios";
 import { toast } from "react-toastify";
 
-function Grid({ users }) {
+function Grid({ users, setUsers }) {
+  const handleDelete = async (id) => {
+    await axios
+      .delete("http://localhost:8800/" + id)
+      .then(({ data }) => {
+        const newArray = users.filter((user) => user.id !== id);
+
+        setUsers(newArray);
+        toast.success(data);
+      })
+      .catch(({ data }) => toast.error(data));
+
+    setOnEdit(null);
+  };
+
   return (
     <Styles.Table>
       <Styles.Thead>
@@ -27,7 +42,7 @@ function Grid({ users }) {
               <FaEdit />
             </td>
             <td width="5%" alignCenter>
-              <FaTrash onClick={() => handleDelete(item.id)} />
+              <FaTrash onClick={() => c(item.id)} />
             </td>
           </tr>
         ))}
