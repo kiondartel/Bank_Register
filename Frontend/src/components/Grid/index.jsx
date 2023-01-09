@@ -3,7 +3,7 @@ import * as Styles from "./styles";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-function Grid({users}) {
+function Grid({ users }) {
   return (
     <Styles.Table>
       <Styles.Thead>
@@ -16,15 +16,21 @@ function Grid({users}) {
         </tr>
       </Styles.Thead>
       <Styles.Tbody>
-        {users.map((item, index)) => (
+        {users.map((item, index) => (
           <tr key={index}>
             <td width="30%">{item.nome}</td>
             <td width="30%">{item.email}</td>
-            <td width="20%" onlyWeb>{item.fone}</td>
-            <td width="5%" alignCenter><FaEdit /></td>
-            <td width="5%" alignCenter><FaTrash onClick={() => handleDelete(item.id)} /></td>
+            <td width="20%" onlyWeb>
+              {item.fone}
+            </td>
+            <td width="5%" alignCenter>
+              <FaEdit />
+            </td>
+            <td width="5%" alignCenter>
+              <FaTrash onClick={() => handleDelete(item.id)} />
+            </td>
           </tr>
-        )}
+        ))}
       </Styles.Tbody>
     </Styles.Table>
   );
