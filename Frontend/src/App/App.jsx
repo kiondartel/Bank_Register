@@ -22,12 +22,13 @@ function App() {
   useEffect(() => {
     getUsers();
   }, [setUsers]);
+
   return (
     <>
       <Styled.Container>
         <Styled.Title>Usuarios</Styled.Title>
-        <Form />
-        <Grid users={users} setUsers={setUsers} />
+        <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
+        <Grid users={users} setUsers={setUsers} setOnEdit={setOnEdit} />
       </Styled.Container>
       <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
       <Global />

@@ -4,7 +4,11 @@ import { FaTrash, FaEdit } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function Grid({ users, setUsers }) {
+function Grid({ users, setUsers, setOnEdit }) {
+  const handleEdit = (item) => {
+    setOnEdit(item);
+  };
+
   const handleDelete = async (id) => {
     await axios
       .delete("http://localhost:8800/" + id)
@@ -39,10 +43,10 @@ function Grid({ users, setUsers }) {
               {item.fone}
             </td>
             <td width="5%" alignCenter>
-              <FaEdit />
+              <FaEdit onClick={() => handleEdit(item)} />
             </td>
             <td width="5%" alignCenter>
-              <FaTrash onClick={() => c(item.id)} />
+              <FaTrash onClick={() => handleDelete(item.id)} />
             </td>
           </tr>
         ))}
