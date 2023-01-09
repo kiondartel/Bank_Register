@@ -5,6 +5,7 @@ import Form from "../components/Form";
 import Grid from "../components/Grid";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -28,7 +29,7 @@ function App() {
       <Styled.Container>
         <Styled.Title>Usuarios</Styled.Title>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
-        <Grid users={users} setUsers={setUsers} setOnEdit={setOnEdit} />
+        <Grid setOnEdit={setOnEdit} users={users} setUsers={setUsers} />
       </Styled.Container>
       <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
       <Global />
