@@ -9,7 +9,6 @@ export const Table = styled.table`
   max-width: 800px;
   margin: 20px auto;
   word-break: break-all;
-  border: 1px solid red;
 `;
 
 export const Thead = styled.thead``;

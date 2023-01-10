@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import background from "../image/santander.jpg";
 const Global = createGlobalStyle`
 
   * {
@@ -10,6 +10,9 @@ const Global = createGlobalStyle`
   }
 
   body {
+    background-image: url(${background});
+  background-position: center center;
+  background-size: cover;
     width: 100vw;
     height: 100vh;
     display: flex;

@@ -5,9 +5,10 @@ export const Container = styled.form`
   align-items: flex-end;
   gap: 10px;
   flex-wrap: wrap;
-  background-color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1.3;
   padding: 30px;
-  box-shadow: 0px 0px 5px #dc143c;
+  box-shadow: 0px 0px 5px #555;
   border-radius: 5px;
 
   button {
@@ -26,6 +27,7 @@ export const InputArea = styled.div`
   flex-direction: column;
 
   label {
+    color: #fff;
   }
 
   input {

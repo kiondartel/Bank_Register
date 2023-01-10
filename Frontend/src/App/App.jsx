@@ -6,6 +6,7 @@ import Grid from "../components/Grid";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import Header from "../components/Header";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -26,8 +27,9 @@ function App() {
 
   return (
     <>
+      <Header />
       <Styled.Container>
-        <Styled.Title>Usuarios</Styled.Title>
+        <Styled.Title>Novos clientes</Styled.Title>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
         <Grid setOnEdit={setOnEdit} users={users} setUsers={setUsers} />
       </Styled.Container>
